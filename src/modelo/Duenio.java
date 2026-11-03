@@ -1,10 +1,10 @@
 package modelo;
 
-public class Dueño extends Persona {
+public class Duenio extends Persona {
     private String email;
     private PlanSalud planSalud;
 
-    public Dueño(String nombre, String apellido, String DNI, String telefono, String email, PlanSalud planSalud) {
+    public Duenio(String nombre, String apellido, String DNI, String telefono, String email, PlanSalud planSalud) {
         super(nombre, apellido, DNI, telefono);
         this.email = email;
         this.planSalud = planSalud;
