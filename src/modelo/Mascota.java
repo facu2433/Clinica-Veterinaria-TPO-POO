@@ -10,6 +10,7 @@ public abstract class Mascota implements Serializable {
     protected String raza;
     protected String sexo;
     protected LocalDate fechaNacimiento;
+    protected  HistoriaClinica historiaClinica;
 
     private Duenio duenio;
 
@@ -22,9 +23,23 @@ public abstract class Mascota implements Serializable {
             throw new IllegalArgumentException("El peso actual debe ser mayor a 0.");
         }
         this.pesoActual = pesoActual;
+        this.historiaClinica = new HistoriaClinica();
     }
 
     public abstract String getCalendarioVacunacion();
+
+    public abstract Especie getEspecie();
+
+    public HistoriaClinica getHistoriaClinica() {
+        return historiaClinica;
+    }
+
+    public void cambiarDuenio(Duenio nuevo) {
+        if (duenio != null) {
+            duenio.quitarMascota(this);
+        }
+        nuevo.agregarMascota(this);   
+    }
 
     public int getEdadEnMeses() {
         return (int) ChronoUnit.MONTHS.between(fechaNacimiento, LocalDate.now());

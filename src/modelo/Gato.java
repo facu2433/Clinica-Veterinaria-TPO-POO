@@ -14,7 +14,9 @@ public class Gato extends Mascota {
     public String getCalendarioVacunacion() {
         return "Gato: triple felina a las 8 semanas con refuerzo a las 12, "+ "antirrábica a los 4 meses y refuerzo anual.";
 }
-    
+    @Override
+    public Especie getEspecie() { return Especie.GATO; }    
+
     public Entorno getEntorno() {
         return entorno;
     }

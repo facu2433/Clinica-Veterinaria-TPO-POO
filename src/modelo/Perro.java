@@ -17,6 +17,9 @@ public class Perro extends Mascota {
         return "Perro: quíntuple a las 8 semanas con refuerzos cada 4 semanas, "+ "antirrábica a los 4 meses y refuerzo anual.";
     }
 
+    @Override
+    public Especie getEspecie() { return Especie.PERRO; }
+
     public String getNumeroChip() {
         return numeroChip;
     }

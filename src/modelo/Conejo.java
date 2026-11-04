@@ -7,3 +7,6 @@ public class Conejo extends Mascota {
         super(nombre, pesoActual, raza, sexo, fechaNacimiento);
     }
 }
+
+@Override
+public Especie getEspecie() { return Especie.CONEJO; }

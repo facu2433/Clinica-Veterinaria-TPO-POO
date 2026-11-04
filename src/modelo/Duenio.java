@@ -20,6 +20,10 @@ public class Duenio extends Persona {
         return "Dueño: \n" + super.descripcion() + "\nEmail: " + email + "\nPlan de Salud: " + planSalud;
     }
     
+    public void quitarMascota(Mascota mascota) {
+        mascotas.remove(mascota);
+    }
+
     public void agregarMascota(Mascota mascota) {
         mascotas.add(mascota);
     }

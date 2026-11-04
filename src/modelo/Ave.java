@@ -14,6 +14,9 @@ public class Ave extends Mascota {
     public String getCalendarioVacunacion() {
         return "Ave: vacuna polivalente a las 6 semanas con refuerzo anual.";
     }
+    
+    @Override
+    public Especie getEspecie() { return Especie.AVE; }
 
     public boolean isPuedeVolar() {
         return puedeVolar;
