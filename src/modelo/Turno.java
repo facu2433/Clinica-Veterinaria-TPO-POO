@@ -67,10 +67,21 @@ public class Turno implements Serializable {
         estado = Estado.AUSENTE;
     }
 
-    public LocalDateTime getFechaHora() { return fechaHora; }
-    public TipoAtencion getTipoAtencion() { return tipoAtencion; }
-    public Estado getEstado() { return estado; }
-    public boolean esUrgencia() { return esUrgencia; }
-    public Mascota getMascota() { return mascota; }
-    public Veterinario getVeterinario() { return veterinario; }
+    public LocalDateTime getFechaHora() { 
+        return fechaHora; }
+
+    public TipoAtencion getTipoAtencion() { 
+        return tipoAtencion; }
+
+    public Estado getEstado() { 
+        return estado; }
+        
+    public boolean esUrgencia() { 
+        return esUrgencia; }
+
+    public Mascota getMascota() { 
+        return mascota; }
+
+    public Veterinario getVeterinario() { 
+        return veterinario; }
 }
