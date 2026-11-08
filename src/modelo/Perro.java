@@ -3,6 +3,8 @@ package modelo;
 import java.time.LocalDate;
 
 public class Perro extends Mascota {
+    private static final long serialVersionUID = 1L;
+
     private String numeroChip;
     private String tamanio;
 

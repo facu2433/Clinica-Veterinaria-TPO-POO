@@ -3,6 +3,8 @@ package modelo;
 import java.time.LocalDate;
 
 public class Gato extends Mascota {
+    private static final long serialVersionUID = 1L;
+
     private Entorno entorno;
 
     public Gato(String nombre, double pesoActual, String raza, String sexo,LocalDate fechaNacimiento, Entorno entorno) {

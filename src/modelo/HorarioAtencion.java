@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class HorarioAtencion implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private DayOfWeek dia;
     private LocalTime horaInicio;
     private LocalTime horaFin;
@@ -23,14 +25,19 @@ public class HorarioAtencion implements Serializable {
         this.horaFin = horaFin;
     }
 
-    
+    /** ¿Este horario cubre el turno completo (desde inicio hasta inicio + duración)? */
     public boolean cubre(LocalDateTime inicio, int duracionMin) {
+        if (inicio == null || duracionMin <= 0) {
+            throw new IllegalArgumentException("Inicio y duración (mayor a cero) son obligatorios.");
+        }
         if (inicio.getDayOfWeek() != dia) {
             return false;
         }
         LocalTime desde = inicio.toLocalTime();
         LocalTime hasta = desde.plusMinutes(duracionMin);
 
+        // Si al sumar la duración se pasa de medianoche, LocalTime "da la vuelta":
+        // en ese caso el turno no entra en el día.
         if (hasta.isBefore(desde)) {
             return false;
         }
@@ -38,12 +45,14 @@ public class HorarioAtencion implements Serializable {
     }
 
     public DayOfWeek getDia() {
-         return dia; 
-        }
-    public LocalTime getHoraInicio() { 
-        return horaInicio; 
+        return dia;
     }
-    public LocalTime getHoraFin() { 
-        return horaFin; 
+
+    public LocalTime getHoraInicio() {
+        return horaInicio;
+    }
+
+    public LocalTime getHoraFin() {
+        return horaFin;
     }
 }

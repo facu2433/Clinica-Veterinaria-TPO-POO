@@ -3,6 +3,8 @@ package modelo;
 import java.time.LocalDate;
 
 public class Conejo extends Mascota {
+    private static final long serialVersionUID = 1L;
+
 
     public Conejo(String nombre, double pesoActual, String raza, String sexo,
                   LocalDate fechaNacimiento) {
